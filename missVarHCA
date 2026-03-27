@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("healthcare_analytics_patient_flow_data.csv")
+
+# Count missing values in each column
+missing_values = df.isnull().sum()
+
+# Plot line chart
+plt.figure()
+
+plt.plot(missing_values.index, missing_values.values, marker='o')
+
+plt.title("Missing Values in Dataset")
+plt.xlabel("Variables")
+plt.ylabel("Number of Missing Values")
+
+plt.xticks(rotation=45)
+
+plt.show()
